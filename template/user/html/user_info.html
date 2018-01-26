@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>修改信息 - 会员中心 -{maccms:name}</title>
+
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+<meta name="keywords" content="{maccms:keywords}"/>
+<meta name="description" content="{maccms:description}"/>
+<link href="{maccms:path}template/user/css/base.css" type="text/css" rel="stylesheet"/>
+<link href="{maccms:path}template/user/css/u.css" type="text/css" rel="stylesheet"/>
+<link href="{maccms:path}template/user/css/i.css?20120915" type="text/css" rel="stylesheet"/>
+<script>var SitePath='{maccms:path}',SiteAid='{maccms:siteaid}',SiteTid='{maccms:sitetid}',SiteId='{maccms:siteid}';</script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/common.js"></script>
+<script src="{maccms:path}template/user/js/formValidator-4.0.1.js" type="text/javascript"></script>
+</head>
+<body>
+{head}
+
+
+<div class="user_box">
+<ul>
+<form id="form1" name="form1" method="post" action="index.php?m=user-save.html" >
+<li><input value="{u_name}" readOnly="true" ></li>
+<li><input type="password" id="u_password1" name="u_password1" maxlength="20" value="" placeholder="新密码"></li>
+<li><input type="password" id="u_password2" name="u_password2" maxlength="20" value="" placeholder="再次输入密码"></li>
+<li><input id="u_qq" size="40" value="{u_qq}" name="u_qq" placeholder="QQ号码"></li>
+<li><input id="u_email" size="40" value="{u_email}" name="u_email" placeholder="邮寄地址"></li>
+<li><input id="u_phone" size="40" value="{u_phone}" name="u_phone" placeholder="联系电话"></li>
+<li><input  id="u_question" size="40" value="{u_question}" name="u_question" placeholder="找回密码问题"></li>
+<li><input id="u_answer" size="40" value="{u_answer}" name="u_answer" placeholder="装回密码答案"></li>
+<a href="javascript:void(0);" onclick="javascript:document.forms[0].submit();" class="btn" id="btnSave">修改</a>
+
+</form>
+</ul>
+</div>
+
+<script type="text/javascript">
+			$.formValidator.initConfig({
+				formID:"changepsw",
+				debug:false,
+				submitOnce:false,
+				onSuccess:function(){
+					//alert('dddddddddddddd');
+					$("#changepsw").qiresub({
+						curobj:$("#savebt"),
+						txt:'资料提交中,请稍后...',
+						onsucc:function(result){
+							//$.showfloatdiv({offset:$("#register").offset(),txt:'成功注册'});
+							$.hidediv(result);
+							if(parseInt(result.rcode)>0)
+							{
+								$("#u_oldpass").val('');
+								$("#u_password1").val('');
+								$("#u_password2").val('');
+							}
+							//alert(result.msg);
+						}
+					}).post({url:'/user-Center-changepsw'});
+					return false;
+				},
+				onError:function(msg,obj,errorlist){
+					$("#errorlist").empty();
+					$.map(errorlist,function(msg){
+						$("#errorlist").append("<li>" + msg + "</li>")
+					});
+					//alert(msg);
+				},
+				submitAfterAjaxPrompt : '有资料正在非同步验证，请稍等...'
+			});
+			
+			$("#u_oldpass").formValidator({
+				onShow:"请输入密码",
+				onFocus:"密码至少6位",
+				onCorrect:"密码输入正确",
+				onError:'密码不能为空'
+			})
+			.inputValidator({
+				min:6,
+				empty:{
+					leftEmpty:false,
+					rightEmpty:false,
+					emptyError:"密码两边不能有空格"
+				},onError:"密码需要在6-16为之间"
+			});
+			
+			$("#u_password1").formValidator({
+				onShow:"请输入密码",
+				onFocus:"密码至少6位",
+				onCorrect:"输入合法"
+			})
+			.inputValidator({
+				min:6,
+				empty:{
+					leftEmpty:false,
+					rightEmpty:false,
+					emptyError:"密码不能为空"
+				},
+				onError:"密码需要在6-16为之间"
+			});
+			
+			// Verifyu_oldpass
+			$("#u_password2").formValidator({
+				onShow:"请再次输入密码",
+				onFocus:"密码至少6位",
+				onCorrect:"密码一致"
+			})
+			.inputValidator({
+				min:6,
+				empty:{
+					leftEmpty:false,
+					rightEmpty:false,
+					emptyError:"重复输入的密码必须和新密码一致"
+				},onError:"重复输入的密码必须和新密码一致"
+			})
+			.compareValidator({
+				desID:"u_password1",
+				operateor:"=",
+				onError:"2次密码不一致,请确认"
+			});
+		</script>
+{foot}
+</body>
+</html>

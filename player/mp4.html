@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>mp4</title>
+</head>
+<body>
+<div id="a1"></div>
+<script type="text/javascript" src="/player/ckplayer/ckplayer.js" charset="utf-8"></script>
+<script type="text/javascript">
+var url = window.parent.frames.MacPlayer.PlayUrl;
+var h =   window.parent.frames.MacPlayer.Height;
+var flashvars={
+f:url,         //视频地址
+s:0,           //播放模式
+c:0,           //是否读取文本配置,0不是，1是
+p:1,           //是否自动播放 0不是，1是
+e:5,           //视频结束后的动作
+d:"", //暂停时播放的广告
+u:"",                                            //暂停时如果是图片的话，加个链接地址
+l:"",   //前置广告
+r:"",                                            //暂停时如果是图片的话，加个链接地址
+t:10                                             //前置广告时间
+};
+var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always',wmode:'transparent'};
+CKobject.embedSWF('/player/ckplayer/ckplayer.swf','a1','ckplayer_a1','100%',h,flashvars,params);
+var video=[url+'->video/mp4'];
+var support=['iPad','iPhone','ios','android+false','msie10+false'];
+CKobject.embedHTML5('a1','ckplayer_a1','100%',h,video,flashvars,support);
+</script>
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>在线充值 - 会员中心 -{maccms:name}</title>
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+<meta name="keywords" content="{maccms:keywords}"/>
+<meta name="description" content="{maccms:description}"/>
+<link href="{maccms:path}template/user/css/base.css" type="text/css" rel="stylesheet"/>
+<link href="{maccms:path}template/user/css/u.css" type="text/css" rel="stylesheet"/>
+<link href="{maccms:path}template/user/css/i.css?20120915" type="text/css" rel="stylesheet"/>
+<script>var SitePath='{maccms:path}',SiteAid='{maccms:siteaid}',SiteTid='{maccms:sitetid}',SiteId='{maccms:siteid}';</script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/common.js"></script>
+<script src="{maccms:path}template/user/js/formValidator-4.0.1.js" type="text/javascript"></script>
+<style type="text/css">
+.user_box dl { margin-bottom:20px;}
+.user_box dl h6{ line-height:30px; font-size:14px; font-weight:bold; color:#900; padding:10px; border:1px solid #900; margin:10px;}
+.user_box dl dd {padding:10px;}
+.user_box dl dd a {border:1px solid #CCC; text-align:center; margin:15px 8px 15px 0; padding:8px 13px;}
+.shuoming { padding:10px;}
+.shuoming h6{ line-height:30px; font-size:14px; font-weight:bold; color:#900;}
+.shuoming li{ line-height:30px; font-size:12px; list-style:none;}
+</style>
+</head>
+<body>
+{head}
+
+
+<div class="user_box">
+<dl>
+<h6>会员級別分为两种：
+黄金会员 - 黄金会员可以观看全部禁片，但不能下载。
+钻石会员 - 钻石会员可以观看全部禁片，支援電腦、平板以及手機观看禁片。</h6></dl>
+<dl>
+<h6>必看！！请点击你需要购买的充值卡金额，到卡密平台进行购卡，付款后请复制卡密平台的提供的【充值账号】【密码】，把收到的卡号和密碼复制到下面的输入框中确认即可。充值成功后，请到升级页面升级到相应的会员組。</h6>
+<dd><a href="" target="_blank">198元永久</a><a href="" target="_blank">100元包年</a><a href="" target="_blank">10元包月</a><a href="" target="_blank">2元包月</a></dd>
+</dl>
+                      
+<ul>
+<form action="index.php?m=user-paysave.html" method="post" name="form4" id="form4">
+<li><input id="cardnum" name="cardnum" maxlength="40" value="" placeholder="请输入充值卡账号"></li>
+<li><input id="cardpwd" name="cardpwd" maxlength="40" value="" placeholder="请输入充值卡密码"></li>
+<a href="javascript:void(0);" onclick="javascript:document.forms[0].submit();" class="btn" id="btnSave">提交</a>
+</form>
+</ul>
+
+
+</div>
+
+
+{foot}
+</body>
+</html>

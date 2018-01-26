@@ -1,0 +1,81 @@
+
+#jishu{text-align:left;max-width:950px;height:100%;overflow:hidden;border-right:1px solid #E9E9E9;border-left:1px solid #E9E9E9;border-bottom:1px solid #E9E9E9;padding-top:13px;padding-bottom:13px;margin-bottom:8px;}
+/**+html #jishu {padding-bottom:20px}*/
+.guankan{float:left;padding-left:17px;width:118px;margin:6px 0px 7px 0px;font-size:14px;}
+.guankan a{border:1px solid #DCDCDC;background:#F2F2F2;color:#333333;display:block;width:115px;text-align:center;height:26px;line-height:26px;padding-top:2px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
+.guankan a:hover{background:#D5210F;color:#FFFFFF;border:1px solid #CC0000;text-decoration:none;}
+.juji{float:left;padding-left:17px;width:118px;/*margin:6px 0px 7px 0px;*/ margin-top:6px; padding-bottom:7px;font-size:14px; display:inline;}
+.juji a{border:1px solid #DCDCDC;background:#F2F2F2;color:#333333;display:block;width:115px;text-align:center;height:26px;line-height:26px;padding-top:2px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
+.juji a:hover{background:#D5210F;color:#FFFFFF;border:1px solid #CC0000;text-decoration:none;}
+#jishu .con4{/*clear:both;*/border-top:0; border-left:0;border-right:0;/*width:950px; display:inline-block; margin-bottom:-10px;*/}
+
+ul.pdown{ padding-left:2px; width:950px; overflow:hidden; /*height:120px; overflow-x:hidden; overflow-y:auto;*/}
+ul.pdown li{ float:left; height:40px; overflow:hidden;*width:169px;_width:168px;}
+ul.pdown a{ display:block; width:160px;*width:159px;_width:158px;  height:30px; overflow:hidden; background:#e9f5fa; text-align:center; line-height:30px; overflow:hidden; color:#0071bc; margin-bottom:10px; float:left; margin-left:10px;*margin-left:11px;_margin-left:10px;}
+ul.pdown a:hover{ color:#f00;}
+ul.downurl{list-style:none;border-bottom:1px solid #eaeaea;/*padding-bottom:12px;*/ padding:0 10px 23px; overflow:hidden; zoom:1;}
+ul.downurl li{/*line-height:34px; */overflow:hidden;/* padding:0 10px;*/ border-bottom:0px solid #eaeaea; /*width:950px; margin:3px auto;*/ vertical-align:middle; width:100%; float:left;  padding:3px 0;margin-left:0px;*margin-left:2px;height: 26px;
+    border-top: 1px dashed #EBE6ED;
+    line-height: 26px;
+    padding: 17px 0 17px 20px;
+    margin-top: -1px;}
+ul.downurl li div{ float:left; display:inline; overflow:hidden; padding-top:5px; height:24px;}
+ul.downurl li .adds{/*line-height:26px; */width:657px; /*margin:6px 0px 10px 0px;*/ line-height:24px; color:#738d9e;}
+ul.downurl li .adds input { float:left; margin:5px 8px 0px 7px; *margin:0 5px 0 0; display:inline;}
+/**+html ul.downurl li .adds input { float:left; margin:2px 8px 0px 7px;}*/
+ul.downurl li .adds div{overflow:hidden; padding-top:0; width:604px;}
+ul.downurl li .adds div span{color:#6B6E75;overflow:hidden; float:left; height:24px;padding-right:0px;/* width:162px;*/ display:inline;}
+ul.downurl li .adds div input {/*position:absolute; overflow:hidden;display:block; float:left;  */font-size:12px;border:1px solid #e4e4e4;/*float:left;*/ padding:0px 0px 0px 6px; height:22px; line-height:22px; color:#000;background:#f2f2f2;margin:0px 0px 0px 10px;}
+/*ul.downurl li .adds div{border:1px solid #87CEFF;overflow:hidden; }
+ul.downurl li .adds div a { float:left; display:block;  text-overflow:ellipsis; white-space:nowrap; overflow:hidden;}*/
+ul.downurl li .adds div span a {color:#6B6E75;}
+ul.downurl li .addss{/*line-height:26px; */width:782px; /*margin:6px 0px 10px 0px;*/ line-height:24px; color:#738d9e;}
+ul.downurl li .addss input { float:left; margin:5px 8px 0px 7px; *margin:0 5px 0 0; display:inline;}
+/**+html ul.downurl li .addss input { float:left; margin:2px 8px 0px 7px;}*/
+ul.downurl li .addss div{overflow:hidden; padding-top:0; width:749px;}
+ul.downurl li .addss div span{color:#bc2931;overflow:hidden; float:left; height:24px;padding-right:0px;/* width:162px;*/ display:inline;}
+ul.downurl li .addss div input {/*position:absolute; overflow:hidden;display:block; float:left;  */font-size:12px;border:1px solid #e4e4e4;/*float:left;*/ padding:0px 0px 0px 6px; height:22px; line-height:22px; color:#000;background:#f2f2f2;margin:0px 0px 0px 10px;}
+/*ul.downurl li .addss div{border:1px solid #87CEFF;overflow:hidden; }
+ul.downurl li .addss div a { float:left; display:block;  text-overflow:ellipsis; white-space:nowrap; overflow:hidden;}*/
+ul.downurl li .addss div span a {color:#bc2931;}
+ul.downurl li .dwon_xl{ width:64px; height:25px;/*padding-top:6px;*/ padding-left:12px;}
+ul.downurl li .dwon_xl a{ display:block; background:#249ff1; width:64px; height:24px; text-align:center; line-height:25px; color:#FFF; /*margin-bottom:1px;*/font-weight:normal;}
+ul.downurl li .dwon_xl a:hover{text-decoration:underline;}
+ul.downurl li .dwon_tx{ width:64px; height:25px;/*padding-top:6px;*/ padding-left:11px;}
+ul.downurl li .dwon_tx a{ display:block; background:#ff6c00; width:64px; height:24px; text-align:center; line-height:25px; color:#FFF; margin-bottom:1px;}
+ul.downurl li .dwon_tx a:hover{text-decoration:underline;}
+ul.downurl li .dwon_y{ width:64px; height:25px;/*padding-top:6px;*/ padding-left:11px;}
+ul.downurl li .dwon_y a{ display:block; background:#36c345; width:64px; height:24px; text-align:center; line-height:25px; color:#FFF; margin-bottom:1px;}
+ul.downurl li .dwon_y a:hover{text-decoration:underline;}
+@media (max-width: 600px) {
+ul.downurl li{height:58px!important;padding:0!important;}
+ul.downurl li div{padding-top:0!important;}
+ul.downurl li .dwon_xl{width: 80px!important;}
+ul.downurl li .dwon_tx{width: 80px!important;padding-left:7px!important}
+ul.downurl li .dwon_y{width: 80px!important;padding-left:0!important}
+ul.downurl{padding-bottom:10px!important;}
+.ckall{height:40px!important;}
+.movie .info li{height:26px;overflow:hidden}
+ul.downurl li .adds x{display:none!important;}
+}
+ul.downurl li .down_z{ width:64px; height:25px;/*padding-top:6px;*/ padding-left:8px;}
+ul.downurl li .down_z a{ display:block; background:#d761b0; width:64px; height:24px; text-align:center; line-height:25px; color:#FFF; margin-bottom:1px;font-weight:normal;font-family:verdana;}
+ul.downurl li .dwon_z a:hover{text-decoration:underline;}
+ul.downurl li .dwon_xm{ width:40px; height:25px;padding-top:6px; padding-left:8px;}
+ul.downurl li .dwon_xm a{ display:block; background:#FF6C00; width:40px; height:25px; text-align:center; line-height:26px; color:#FFF; margin-bottom:1px;}
+ul.downurl li .down_cp{ width:64px; height:25px; overflow:hidden; display:inline; /*padding-top:6px;*/padding-left:8px;}
+/**+ ul.downurl li .down_cp{ padding-top:5px;}*/
+ul.downurl li .down_cp a{ display:block; background:#f3f3f3; width:62px; height:22px; text-align:center; line-height:22px; color:#000; /*margin-bottom:1px;*/border:1px solid #ddd;}
+ul.downurl li .down_cp a:hover{ text-decoration:none; background:#efefef;}
+.ckall{height:26px;padding:15px 0 4px 10px;width:950px;float:left}
+/**+.ckall { padding-bottom:7px;}*/
+.ckall p,.ckall span{ float:left; margin-left:7px;}
+.ckall span {/* display:block;*/ padding-top:4px; height:18px; color:#464646; display:inline; *margin-left:0;}
+.ckall span input {margin-top:-3px; vertical-align:middle;}
+.ckall span em{ padding-left:8px; padding-right:15px;font-style:normal;}
+.ckall p a{display:block; background:url("../../../static/images/subtit.png"/*tpa=http://m.heimayi.cc/static/images/subtit.png*/) no-repeat -565px -47px #efefef; width:133px; height:28px; overflow:hidden;  text-align:center; line-height:30px; float:left; color:#464646;}
+.ckall p a{ color:#000000;}
+.ckall p a:hover{text-decoration:underline;}
+.ckall b{font-weight:normal; height:28px; float:right;padding-right:26px; line-height:30px;color:#000;}
+.ckall b a{font-weight:normal; color:#bc2931;padding-left:1px; padding-right:1px;}
+.ckall b a:hover{text-decoration:underline;}

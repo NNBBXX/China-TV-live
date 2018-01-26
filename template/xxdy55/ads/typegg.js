@@ -1,0 +1,1 @@
+document.writeln("<marquee direction=\"left\" align=\"bottom\" width=\"70%\" onmouseout=\"this.start()\" onmouseover=\"this.stop()\" scrollamount=\"3\" scrolldelay=\"1\">为防止丢失我们，请点击上方关注我们，永久免费在线观看哦！<\/marquee>");

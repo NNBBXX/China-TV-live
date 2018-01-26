@@ -1,0 +1,64 @@
+
+<?php
+		 if(!isset($m)) $m='7';
+		 $an=round($m/2);
+		 $bn=$m-$an;
+//修改 AA BB CC DD 处即可
+    header("Content-type: text/html; charset=utf-8");
+    function post1($url, $data){
+        $postdata = http_build_query(
+            $data
+        );
+        $opts = array('http' =>
+            array(
+              'method'  => 'POST',
+              'header'  => 'Content-type: application/x-www-form-urlencoded','Host:zhannei.baidu.com','Connection:keep-alive','Content-Length:21','Content-type:application/x-www-form-urlencoded','User-Agent:Mozilla/5.0 (Android; Mobile; rv:14.0) Gecko/14.0 Firefox/14.0','Referer:http://zhannei.baidu.com/',  //AA 你的网址
+              'content' => $postdata
+            )
+        );
+        $context = stream_context_create($opts);
+        $result = file_get_contents($url, false, $context);
+        return $result;
+    }
+
+//buqukan
+            $icmyy="http://zhannei.baidu.com/cse/search?s=2758772450457967865&ie=utf8&q=".$content;
+            $data=array('q'=>$content);
+            $html=post1($icmyy,$data);
+        preg_match_all('/ <a cpos="title"([\s\S]*?)<\/div>/',$html,$mat);
+        $j=0;
+        $contentb=array();
+        for($i=0;$i<=$an-1;$i++){
+            $title_res = preg_match('/title="([\s\S]*?)"/',$mat[1][$i],$title);
+            $url_res = preg_match('/newchapter" href="([\s\S]*?)"/',$mat[1][$i],$url);
+            $dep_res = preg_match('/newchapter" href="([\s\S]*?)blank">([\s\S]*?)<\/a>/',$mat[1][$i],$dep);
+            if ($title_res==1 and $url_res==1 and $dep_res==1){
+				$title=$title[1];
+                $url=$url[1];   //CC 你的网址
+                $dep=$dep[2];   //CC 你的网址
+                $contentb[$j]=array("PicUrl"=>"", "Url" =>$url,"Title"=>"[".$title."]更新至".$dep."-笔趣阁","Description"=>"");
+                $j++;
+            }
+        }
+//630book.la
+            $icmyy="http://zhannei.baidu.com/cse/search?s=7838902352036767286&ie=utf8&q=".$content;
+            $data=array('q'=>$content);
+            $html=post1($icmyy,$data);
+        preg_match_all('/ <a cpos="title"([\s\S]*?)<\/div>/',$html,$mat);
+        $j=0;
+        $contentc=array();
+        for($i=0;$i<=$bn-1;$i++){
+            $title_res = preg_match('/title="([\s\S]*?)"/',$mat[1][$i],$title);
+            $url_res = preg_match('/newchapter" href="([\s\S]*?)"/',$mat[1][$i],$url);
+            $dep_res = preg_match('/newchapter" href="([\s\S]*?)blank">([\s\S]*?)<\/a>/',$mat[1][$i],$dep);
+            if ($title_res==1 and $url_res==1 and $dep_res==1){
+				$title=$title[1];
+                $url=$url[1];   //CC 你的网址
+                $dep=$dep[2];   //CC 你的网址
+                $contentc[$j]=array("PicUrl"=>"", "Url" =>$url,"Title"=>"[".$title."]更新至".$dep."-恋上小说","Description"=>"");
+                $j++;
+            }
+        }
+
+ $content1 = array_merge( $contentb, $contentc);
+?>

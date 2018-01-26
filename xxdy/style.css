@@ -1,0 +1,273 @@
+/**
+ *¡ºÔ´Âë¡»ÍøÏúÆìº½ÉÌ³Ç
+ * ¹Ù·½ÍøÕ¾  wxqhsc.cn
+ * @version    3.0
+ * @since      1.0
+ * QQ          813396838
+ * ÓÀ¾ÃÊÛºó¸üÐÂ³ÌÐò£ºshop108096921.taobao.com
+ */ 
+
+    body{
+        font-family: 'Lucida Grande','Trebuchet MS','Hiragino Sans GB','Segoe UI Light','Segoe UI','Microsoft Jhenghei','Î¢ÈíÑÅºÚ',sans-serif;
+        -webkit-font-smoothing: antialiased;
+        color: #666666;
+    }
+    a{
+        outline: none;
+    }
+    img{
+        border:0;
+    }
+    .title{
+        font-size: 40px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .title .recommend{
+        font-size: 14px;
+    }
+    .wording{
+        margin-top: 30px;
+        text-align: center;
+        line-height: 2em;
+    }
+    .container{
+        text-align: center;
+    }
+    .select_wrap{
+        width: 560px;
+        height: 360px;
+        margin: 50px auto 0;
+        overflow: hidden; 
+    }
+
+    .utvs_wrap{
+        width: 140px;
+        text-align: center;
+        margin: 0 auto;
+        float: left
+	}
+
+    .player_wrap{
+        width: 140px;
+        text-align: center;
+        margin: 0 auto;
+        float: left
+    }
+    .url_wrap{
+        width: 140px;
+        text-align: center;
+        margin: 0 auto;
+        float: left
+    }
+    .id_wrap{
+        width: 140px;
+        text-align: center;
+        margin: 0 auto;
+        float: left
+    }.np_wrap{
+        width: 140px;
+        text-align: center;
+        margin: 0 auto;
+        float: left
+    }
+    .adult_wrap{
+        width: 140px;
+        text-align: center;
+        margin: 0 auto;
+        float: left
+    }
+
+    .utvs_wrap img{
+        height: 95px;
+	}
+    .player_wrap img{
+        height: 95px;
+    }
+    .url_wrap img{
+        height: 95px;
+    }
+    .id_wrap img{
+        height: 95px;
+    }
+	.np_wrap img{
+        height: 95px;
+    }
+    .adult_wrap img{
+        height: 95px;
+    }
+
+    .utvs_wrap .link{
+	     margin-top: 20px;
+        padding: 2px 20px;
+        font-size: 20px;
+        color:rgb(95,183,233);
+        -webkit-transition: background 250ms ease-in, color 250ms ease-in;
+        border-radius: 6px;
+        text-decoration: none;
+	 }	
+    .url_wrap .link{
+        margin-top: 20px;
+        padding: 2px 20px;
+        font-size: 20px;
+        color:rgb(95,183,233);
+        -webkit-transition: background 250ms ease-in, color 250ms ease-in;
+        border-radius: 6px;
+        text-decoration: none;
+
+    }
+    .id_wrap .link{
+        margin-top: 20px;
+        padding: 2px 20px;
+        font-size: 20px;
+        color:rgb(95,183,233);
+        -webkit-transition: background 250ms ease-in, color 250ms ease-in;
+        border-radius: 6px;
+        text-decoration: none;
+
+    }
+	.np_wrap .link{
+        margin-top: 20px;
+        padding: 2px 20px;
+        font-size: 20px;
+        color:rgb(95,183,233);
+        -webkit-transition: background 250ms ease-in, color 250ms ease-in;
+        border-radius: 6px;
+        text-decoration: none;
+
+    }
+    .player_wrap .link{
+        margin-top: 20px;
+        padding: 2px 20px;
+        font-size: 20px;
+        color:rgb(95,183,233);
+        -webkit-transition: background 250ms ease-in, color 250ms ease-in;
+        border-radius: 6px;
+        text-decoration: none;
+
+    }
+    .adult_wrap .link{
+        margin-top: 20px;
+        padding: 2px 20px;
+        font-size: 20px;
+        color:rgb(95,183,233);
+        -webkit-transition: background 250ms ease-in, color 250ms ease-in;
+        border-radius: 6px;
+        text-decoration: none;
+
+    }
+    .url_wrap .link{
+        display: block;
+    }
+    .id_wrap .link{
+        display: block;
+    }
+	.np_wrap .link{
+        display: block;
+    }
+    .player_wrap .link{
+        display: block;
+    }
+    .adult_wrap .link{
+        display: block;
+    }
+      .utvs_wrap .link{
+        display: block;
+    }
+    .utvs_wrap .link:hover{
+        color: #fff;
+        background:#BBD631;
+    }
+
+    .utvs_wrap:hover .link{
+        color: #fff;
+        background:#BBD631;
+    }
+    .url_wrap .link:hover{
+        color: #fff;
+        background:#BBD631;
+    }
+    .url_wrap:hover .link{
+        color: #fff;
+        background:#BBD631;
+    }
+    .id_wrap .link:hover{
+        color: #fff;
+        background:#BBD631;
+    }
+	.np_wrap .link:hover{
+        color: #fff;
+        background:#BBD631;
+    }
+    .id_wrap:hover .link{
+        color: #fff;
+        background:#BBD631;
+    }
+	.np_wrap:hover .link{
+        color: #fff;
+        background:#BBD631;
+    }
+    .player_wrap .link:hover{
+        color: #fff;
+        background:#BBD631;
+    }
+    .player_wrap:hover .link{
+        color: #fff;
+        background:#BBD631;
+    }
+    .adult_wrap:hover .link{
+        color: #fff;
+        background:#BBD631;
+    }
+    .adult_wrap .link:hover{
+        color: #fff;
+        background:#BBD631;
+    }
+
+    .copyright{
+        text-align: center;
+        margin-top: 50px;
+        font-size: 12px;
+        font-family: tahoma;
+    }
+
+
+    .first-msg{
+        font-size: 90px;
+    }
+    .notice-msg{
+        font-size: 10px;
+    }
+    .date-msg{
+        font-size: 25px;
+        font-family: 'Segoe UI Light','Segoe UI','Microsoft Jhenghei','Î¢ÈíÑÅºÚ',sans-serif;
+        margin: 10px 0;
+    }
+
+    .link-area{
+        margin-top: 10px;
+    }
+	.utvs-text{
+        font-size: 20px;
+        font-family:'Segoe UI Light','Segoe UI','Microsoft Jhenghei','Î¢ÈíÑÅºÚ',sans-serif;
+    }
+    .url-text{
+        font-size: 20px;
+        font-family:'Segoe UI Light','Segoe UI','Microsoft Jhenghei','Î¢ÈíÑÅºÚ',sans-serif;
+    }
+    .id-text{
+        font-size: 20px;
+        font-family:'Segoe UI Light','Segoe UI','Microsoft Jhenghei','Î¢ÈíÑÅºÚ',sans-serif;
+    }
+	.np-text{
+        font-size: 20px;
+        font-family:'Segoe UI Light','Segoe UI','Microsoft Jhenghei','Î¢ÈíÑÅºÚ',sans-serif;
+    }
+    .player-text{
+        font-size: 20px;
+        font-family:'Segoe UI Light','Segoe UI','Microsoft Jhenghei','Î¢ÈíÑÅºÚ',sans-serif;
+    }
+    .adult-text{
+        font-size: 20px;
+        font-family:'Segoe UI Light','Segoe UI','Microsoft Jhenghei','Î¢ÈíÑÅºÚ',sans-serif;
+    }

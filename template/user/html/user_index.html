@@ -1,0 +1,45 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>基本资料 - 会员中心 -{maccms:name}</title>
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+<meta name="keywords" content="{maccms:keywords}"/>
+<meta name="description" content="{maccms:description}"/>
+<link href="{maccms:path}template/user/css/base.css" type="text/css" rel="stylesheet"/>
+<link href="{maccms:path}template/user/css/u.css" type="text/css" rel="stylesheet"/>
+<link href="{maccms:path}template/user/css/i.css?20120915" type="text/css" rel="stylesheet"/>
+<script>var SitePath='{maccms:path}',SiteAid='{maccms:siteaid}',SiteTid='{maccms:sitetid}',SiteId='{maccms:siteid}';</script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/common.js"></script>
+</head>
+<body>
+{head}
+
+<div class="user_box">
+<ul>
+<li><label>用戶名：</label> {u_name}</li>
+<li><label>所属会员組：</label> {ug_name}</li>
+{if-A:{maccms:usergroupid}=4}
+<li><label>会员周期：</label> 从 {u_start} 到 {u_end}</li>
+{elseif-A:{maccms:usergroupid}=6}
+<li><label>会员周期：</label>2099-12-12</li>
+{else-A}
+<li><label>剩余点数：</label> {u_points}</li>
+{endif-A}
+<li><label>QQ号码：</label> {u_qq}</li>
+<li><label>Email地址：</label> {u_email}</li>
+<li><label>注册时间：</label> {u_regtime}</li>
+<li><label>登录IP：</label> {u_loginip}</li>
+<li><label>登录时间：</label> {u_logintime}</li>
+<li><label>推广次数：</label> {u_extend}</li>
+<li><label>推广链接：</label></li>
+<li><label><input type="text" value="{maccms:url}?m=user-tg-uid-{u_id}.html" style="width:200px"> </label></li>
+<li><label>说明：</label> 介绍一个会员获得2个积分。</li>
+
+
+</ul>
+</div>
+{foot}
+</body>
+</html>

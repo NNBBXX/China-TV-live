@@ -1,0 +1,67 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>升级会员组 - 会员中心 -{maccms:name}</title>
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+<meta name="keywords" content="{maccms:keywords}"/>
+<meta name="description" content="{maccms:description}"/>
+<link href="{maccms:path}template/user/css/base.css" type="text/css" rel="stylesheet"/>
+<link href="{maccms:path}template/user/css/u.css" type="text/css" rel="stylesheet"/>
+<link href="{maccms:path}template/user/css/i.css?20120915" type="text/css" rel="stylesheet"/>
+<script>var SitePath='{maccms:path}',SiteAid='{maccms:siteaid}',SiteTid='{maccms:sitetid}',SiteId='{maccms:siteid}';</script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/common.js"></script>
+<style type="text/css">
+.shuoming h6{ line-height:30px; font-size:14px; font-weight:bold; color:#900; text-align:center;}
+.TONGZHI { border:1px dotted #900; background-color:#FFE8E8; color:#900; font-size:14px; line-height:25px; padding:10px; margin:10px;}
+</style>
+</head>
+<body>
+
+<div class="user_box">
+<ul>
+
+<form action="index.php?m=user-upgradesave" method="post" name="form4" id="form4">
+<input type="hidden" name="flag" value="2"/>
+<li><label>计费类型：</label> {u_flag}</li>
+<li><label>请选择时长：</label>
+				     <select id="baoshi" name="baoshi">
+					 <option value="">所需时长：</option>
+                     <option value="1">包周会员 ({weekpoint}积分)</option>
+                     <option value="2">包月会员 ({monthpoint}积分)</option>
+                     <option value="3">包年会员 ({yearpoint}积分)</option>
+                     </select>
+</li>
+<a href="#" onclick="document.getElementById('form4').submit();" class="btn" id="btnSave">升级VIP</a>
+</form>
+</ul>
+</div>
+
+
+
+<div class="TONGZHI">以下为永久会员组升级渠道</div>
+<div class="user_box">
+<ul>
+
+<form action="index.php?m=user-upgradesave-flag-1.html" method="post" name="form3" id="form3">
+<input type="hidden" name="flag" value="1"/>
+<li><label>当前会员组：</label> {ug_name}</li>
+<li><label>升级至：</label>
+   <select id="u_group" name="u_group">
+   <option value="">请选择会员组</option>
+   <!-- BEGIN row -->
+   <option value="{sel_val}">{sel_name} ({sel_upgrade}积分)</option>
+   <!-- END row -->
+   </select>
+</li>
+<a href="javascript:void(0);" onclick="javascript:document.forms[0].submit();" class="btn" id="btnSave">升级VIP</a>
+</form>
+</ul>
+</div>
+<div class="shuoming">
+    <h6>说明：升级成功之后，请退出账号重新登录一次。</h6>
+    </div>
+<div class="TONGZHI">如有任何问题请联系咨询QQ：{maccms:qq} </div>
+</body>
+</html>

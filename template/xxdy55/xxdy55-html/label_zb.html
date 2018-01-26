@@ -1,0 +1,51 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>免费全球在线直播频道_{maccms:name}</title>
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+<meta content="[vod:contenttext len=150]..." name="Description">
+<meta content="最新" name="Keywords">
+<meta content="telephone=no" name="format-detection" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta content="{maccms:name}" name="apple-mobile-web-app-title">
+{maccms:include}
+
+</head><body>
+<header id='test' class="header clearfix">
+         <a href="javascript:void(0);" target="_self" class="aChannel top_channel_btn"><span>导航</span><i class="moreArrow"></i></a>  <a href="javascript:void(0);" target="_self" class="aHeaderSearch top_search_btn"><i class="globalIcon searchIcon"></i><em>频道搜索</em></a>
+    <a href="http://{maccms:url}" target="_self" class="aHeaderFun"><i class="globalIcon indexIcon"></i><span>首页</span></a><p class="headerChannelList">
+<a  target="_self" href="http://{maccms:url}">首页</a>
+{maccms:menu type=parent order=asc table=vod}<a {if-A:{maccms:curvodtypeid}=[menu:id]}class="current" {endif-A}href="[menu:link]" {if-A:[menu:id]=1}{endif-A}{if-A:[menu:id]=2}{endif-A}{if-A:[menu:id]=4}{endif-A}{if-A:[menu:id]=3}{endif-A}{if-A:[menu:id]=5}{endif-A}{if-A:[menu:id]=6}{endif-A} target="_self" >[menu:name]</a> {/maccms:menu}</p>
+<section class="searchPop popShow">
+<section class="searchCon">
+<form id="ffsearch" name="ffsearch" method="post" action="/index.php?s=vod-search"><span class="sSearchInput"><input autocomplete="off" autovalue="请输入频道名" class="searchInput" placeholder="请输入频道名" type="search" id="wd" name="wd"><i class="iDelete" style="display: none;"></i></span><input type="submit" id="searchbutton"  class="cancelInput" value="搜索" /></form></section>
+<p class="pLinks">
+{maccms:vod num=10 by=hits type=all order=desc}
+ <a href="[vod:link]" target="_self" title="[vod:name]"><span class="sName">[vod:name]</span><span class="sStyle">[vod:typename]</span></a>
+ {/maccms:vod}</p> 
+ </section>
+	</header>
+<div class="mask" id="common_mask"></div>  
+
+<div class="main">
+
+<div class="all_tab top">
+<ul class="list_tab_img" id="resize_list">{maccms:vod num=39 by=hits order=desc}
+ <li><a href="[vod:link]" title="[vod:name]" target="_self">
+<div class="picsize">
+<img class="loading" src="{maccms:path_tpl}/images/indexDefault.png" data-original="[vod:pic]"  />
+<label class="iRankNum"><em>[vod:num]</em></label>
+<label class="name">评分：[vod:score]</label>
+</div>
+ </a> 
+<h2><a href="[vod:link]" target="_self">[vod:name]</a></h2>
+</li>{/maccms:vod}
+</ul>
+</div>
+</div>
+{maccms:foot}
+</body>
+</html>

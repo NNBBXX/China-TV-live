@@ -1,0 +1,116 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>微信免费在线频道直播 {maccms:name}为您提供</title>
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+<meta content="{page:des}" name="Description">
+<meta content="{page:key}," name="Keywords">
+<meta content="telephone=no" name="format-detection" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta content="{maccms:name}" name="apple-mobile-web-app-title">
+<style type="text/css">
+.follow {
+    font-size: 20px;
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+    padding-top: 10%;
+    z-index: 2000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.9);
+    display: none;
+    z-index: 99999999;
+}
+.follow span {
+    font-size: 40px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.follow p {
+    font-size: 16px;
+    line-height: 25px;
+    font-size: 14px;
+}
+.follow img {
+    width: 180px;
+    margin-top: 10px;
+}
+    </style>
+{maccms:include}
+</head>
+<body>
+<header id='test' class="header clearfix">
+         <a href="javascript:void(0);" target="_self" class="aChannel top_channel_btn"><span>{page:name}</span><i class="moreArrow"></i></a>  <a href="javascript:void(0);" target="_self" class="aHeaderSearch top_search_btn"><i class="globalIcon searchIcon"></i><em>搜索频道</em></a>
+    <a href="http://{maccms:url}" target="_self" class="aHeaderFun"><i class="globalIcon indexIcon"></i><span>首页</span></a>
+	<p class="headerChannelList">
+<a  target="_self" href="http://{maccms:url}">首页</a>
+{maccms:menu type=parent order=asc table=vod}<a {if-A:{maccms:curvodtypeid}=[menu:id]}class="current" {endif-A}href="[menu:link]" {if-A:[menu:id]=1}{endif-A}{if-A:[menu:id]=2}{endif-A}{if-A:[menu:id]=4}{endif-A}{if-A:[menu:id]=3}{endif-A}{if-A:[menu:id]=5}{endif-A}{if-A:[menu:id]=6}{endif-A} target="_self" >[menu:name]</a> {/maccms:menu}</p>
+<section class="searchPop popShow">
+<section class="searchCon">
+<form id="ffsearch" name="ffsearch" method="post" action="index.php?s=vod-search"><span class="sSearchInput"><input autocomplete="off" autovalue="请输入频道名" class="searchInput" placeholder="请输入频道名" type="search" id="wd" name="wd"><i class="iDelete" style="display: none;"></i></span><input type="submit" id="searchbutton"  class="cancelInput" value="搜索" /></form></section>
+<p class="pLinks">
+{maccms:vod num=10 by=hits type=all order=desc}
+ <a href="[vod:link]" target="_self" title="[vod:name]"><span class="sName">[vod:name]</span><span class="sStyle">[vod:typename]</span></a>
+ {/maccms:vod}</p> 
+ </section>
+	</header>
+<div class="mask" id="common_mask"></div>
+<div class="link-green">
+<div class="link-green-tab">
+        <ul>
+            <li class="tab-cur"><a href="index.php?m=label-gz.html">点我永久免费看</a></li>
+            <li> <a href="#" onclick="document.getElementById('follow').style.display='block'">点我关注公众号</a> </li></li>
+ </ul>
+ </div>
+</div>
+<div id="follow" class="follow" style="display:none">
+	<span class="close" ><a href="#" onclick="document.getElementById('follow').style.display='none'">×</a></span>
+	<p>长按下方二维码图片</p>
+	<p>点选识别图中二维码</p>
+	<script src="{maccms:path_ads}erweima.js"></script>
+</div>
+<!-- 推荐 -->
+{maccms:matrix type={maccms:curvodtypeid} table=vod}
+<div class="modo_title top"><i class="icol iconfont"></i><script src="{maccms:path_ads}typegg.js"></script> 
+<div class="more"><i class="icor iconfont"><a href="#" onclick="document.getElementById('follow').style.display='none'">···</a></i></div></div>
+<div class="all_tab" style="border-bottom:none">
+<ul class="list_tab_img" id="resize_list">{maccms:vod num=100 by=level type=[matrix:id] order=desc}
+<li>
+<h2><a href="[vod:playlink]" target="_self">[vod:name]</a></h2> 
+</li>
+{/maccms:vod}
+</ul>    
+</div>
+{/maccms:matrix}
+<!-- 推荐 end-->
+{maccms:menu type=auto order=asc by=id table=vod}
+<div class="modo_title top"><i class="icol iconfont"></i><h2><a href="[menu:link]" title="" target="_self">[menu:name]</a></h2><div class="more"><i class="icor iconfont"><a href="[menu:link]" title="[menu:name]" target="_self">更多</a></i></div></div>
+<div class="all_tab" style="border-bottom:none">
+<ul class="list_tab_img" id="resize_list">{maccms:vod num=100 by=time type=[menu:id] order=desc}
+<li>
+<h2><a href="[vod:playlink]" target="_self">[vod:name]</a></h2> 
+</li>
+{/maccms:vod}
+</ul>    
+</div>
+{/maccms:menu}
+<script type="text/javascript" src="{maccms:path_tpl}js/sildeFocusPlugin.js"></script>
+<script>	
+    $("#focus").sildeFocusPlugin({
+        speed:10,
+        conClassName:"focusList",
+        tabClassName:"focusTab"
+    });
+</script>
+<!--底部开始-->
+{maccms:foot}
+</body>
+</html>

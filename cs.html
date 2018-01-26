@@ -1,0 +1,81 @@
+<!--
+地址前半截：
+http://yun.zihu.tv/yunparse/?url=
+http://www.wmxz.wang/video.php?url=
+http://2.jx.72du.com/video.php?url=
+http://www.vipjiexi.com/yun.php?url=
+http://api.cloudparse.com/?url=
+http://yyygwz.com/index.php?url=
+http://000o.cc/jx/ty.php?url=
+http://5qiyi.sdyhy.cn/5qiyi/5qiyi1.php?url=
+http://5qiyi.sdyhy.cn/5qiyi/5qiyi2.php?url=
+http://api.47ks.com/webcloud/?v=
+http://jx.71ki.com/?url=
+http://yun.mt2t.com/yun?url=
+http://api.mp4la.net/?url=
+http://jx.haokan5.net/ty/tong.php?url=
+http://jx.haokan5.net/jx/?url=
+http://player.gakui.top/?url=
+http://qtzr.net/s/?qt=
+
+*http://v.72du.com/api/?url=
+*http://www.yydy8.com/Common/?url=
+*http://www.200919.com/jiexi/vip.php?url=
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>直播地址测试-网销旗航商城提供</title>
+</head>
+<body style="text-align:center;" onload="javascript:txtIn.focus();">
+
+<noscript>你的浏览器不支持JavaScript!</noscript>
+<p>&nbsp;</p>
+
+<p>
+直播源：
+<input id="txtIn" type="text" size="50" title="在这里输入或粘贴在线视频地址，如下：
+http://183.252.176.11//PLTV/88888888/224/3221225901/index.m3u8
+......" />
+<a href="javascript:void(0);" title="清空文本" onclick="javascript:txtIn.value='';txtIn.focus();">清空</a>
+<select id="lefturl">
+<option value="http://zb.ejgzs.cn/player/tv.php?url=" selected>m3u8</option>
+<option value="http://zb.ejgzs.cn/player/zhibo.php?url=">通用</option>
+</select>
+<input type="button" value="直播源测试" onclick="javascript:doPlayVIP();txtIn.select();txtIn.focus();" />
+</p>
+
+<p>
+【m3u8】支持m3u8后缀<br />
+【通用】支持mp4/m3u8/flv/直连<br />
+</p>
+
+<p>&nbsp;</p>
+
+<script type="text/javascript">
+<!--
+function doPlayVIP() {
+  var strIn,theurl;
+  var iPos=0;
+  strIn = decodeURIComponent(txtIn.value);
+  if ( strIn.length<1 ) {
+    alert("【错误提示】\n\n    内容为空，请在文本框内输入或粘贴直播源！\n\n");
+    return;
+  };
+  iPos = strIn.indexOf(".html");
+  if ( iPos>0 ) {
+    txtIn.value = strIn.substr(0,iPos+5);
+  } else {
+    iPos = strIn.indexOf(".shtml");
+    if ( iPos>0 && strIn.indexOf(".sohu.com")>0 ) {
+      txtIn.value = strIn.substr(0,iPos+6);
+    };
+  };
+  theurl = lefturl.value + txtIn.value;
+  window.open(theurl);
+};
+// -->
+</script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plays>	
+
+
+
+	<play status="1" sort="426" from="mp4" show="mp4" des="wxqhsc.cn"><tip><![CDATA[]]></tip></play>
+	<play status="1" sort="425" from="ckplayer" show="ckplayre" des="wxqhsc.cn"><tip><![CDATA[]]></tip></play>
+	<play status="1" sort="424" from="ckm3u8" show="ckm3u8" des="wxqhsc.cn"><tip><![CDATA[]]></tip></play>
+	
+	<play status="1" sort="414" from="zhibo" show="TTV" des="wxqhsc.cn"><tip><![CDATA[]]></tip></play>
+	
+<play status="1" sort="" from="tv" show="MTV" des="ejgzs.cn"><tip><![CDATA[m3u8]]></tip></play><play status="1" sort="" from="xxdy55" show="LTV" des="ejgzs.cn"><tip><![CDATA[]]></tip></play><play status="1" sort="" from="ltv" show="ZTV" des="ejgzs.cn"><tip><![CDATA[]]></tip></play><play status="1" sort="" from="mzb" show="MZB" des="ejgzs.cn"><tip><![CDATA[M3U8]]></tip></play>
+<play status="1" sort="" from="dy" show="HD" des="ejgzs.cn"><tip><![CDATA[M3U8]]></tip></play>
+</plays>

@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{maccms:name} - 新用戶注册</title>
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+<link href="{maccms:path}template/user/css/login.css" type="text/css" rel="stylesheet"/>
+<meta content="{maccms:description}" name="Description">
+<meta content="{maccms:keywords}" name="Keywords">
+<meta content="telephone=no" name="format-detection" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta content="{maccms:name}" name="apple-mobile-web-app-title">
+<script>var SitePath='{maccms:path}',SiteAid='{maccms:siteaid}',SiteTid='{maccms:sitetid}',SiteId='{maccms:siteid}';</script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/common.js"></script>
+<script type="text/javascript">
+function remote_check(t,s){
+  var url="index.php?m=user-regcheck-t-"+t+"-s-"+s;
+  var ret;
+  $.ajax({'url':url,'async':false,'dataType':'json','success':function(data){ret=data;}});
+  return ret.res;
+}
+var validator={
+'u_name':[
+  [/\S+/, '请输入用戶名'],
+  [/\S{4,}/, '用戶名至少4位'],
+  [function(u_name){return remote_check('u_name',u_name);}, '此用戶名已被使用']
+],
+'u_password1':[
+  [/^.+$/, '请输入'],
+  [/^.{6,}$/, '密码至少6位']
+],
+'u_password2':[
+  [/^.+$/, '请再次输入密碼'],
+  [function(s){return s==$('#item_u_password1 input').val();}, '两次密码输入不一致']
+],
+'u_email':[
+  [/\S+/, '请输入邮箱'],
+  [/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i, '输入的邮箱格式不正确'],
+  [function(u_email){return remote_check('u_email',u_email)}, '此邮箱已被使用']
+],
+'u_code':[
+  [/\S+/,'请输入验证码'],
+  [function(u_code){return remote_check('u_code',u_code)}, '验证码不正确']
+]
+};
+
+function validate(item) {
+  var str=$("#item_"+item+" input").val();
+  var m={
+    'RegExp':function(r,s){
+      return r.test(s);
+    },
+    'Function':function(f,s){
+      return f(s);
+    },
+    'String':function(v,s){return v==s;}
+  };
+  for (var v in validator[item]) {
+    var vi=validator[item][v];
+    var c=Object.prototype.toString.apply(vi[0]).match(/(\w+)\]$/)[1];
+    if (m[c] && !m[c](vi[0],str)) {
+      fail(item,vi[1]);
+      return false;
+    }
+  }
+  succ(item);
+  return true;
+}
+
+var result={};
+for (var k in validator){
+	result[k]=false;
+}
+
+function fail(item, msg){
+	$("#item_"+item+" .ui-message").html(msg).removeClass('onCorrect').addClass('onError');
+	result[item]=false;
+	disable();
+}
+function succ(item) {
+	$("#item_"+item+" .ui-message").html('填写正确').removeClass('onError').addClass('onCorrect');
+	result[item]=true;
+	check_all();
+}
+function check_all() {
+	for (var k in result){
+	  if (result[k]==false){
+	    disable();
+	    return true;
+	  }
+	}
+	if (!$('#agree').attr('checked')) {
+	  disable();
+	  return true;
+	}
+	enable();
+	return true;
+}
+function enable(){
+	$('#submit_enabled').show();
+	$('#submit_disabled').hide();
+	return true;
+}
+function disable(){
+	$('#submit_enabled').hide();
+	$('#submit_disabled').show();
+	return false;
+}
+function check_and_submit() {
+	if (!check_all()) {
+	return;
+	}
+	$('form')[0].submit();
+}
+$(function(){
+	$('#regform input').blur(function(){ validate(this.name); }).change(check_all);
+});
+</script>
+
+</head>
+<body>
+<div id="sign-logo"></div>
+
+<div class="login-wrapper" style="padding-bottom:30px;">
+<form id="regform" action="index.php?m=user-regsave.html" method="post">
+<section id="email" class="main hid" style="display: block;">
+  <input type="hidden" name="step" value="0">
+  <p class="hint_12_tit">用戶名</p>
+  <div class="mod mod_more h5_input">
+    <input id="u_name" name="u_name" type="text" placeholder="起一個好記的用戶名">
+  </div>
+  <p class="hint_12_tit">设置密码</p>
+  <div class="mod mod_more h5_input input_change_type">
+    <input type="text" disableemoticoninput="true" id="u_password1" name="u_password1" maxlength="16" placeholder="6~16位数字或字母，区分大小写"></div>
+  <p class="hint_12_tit">重读密码</p>
+  <div class="mod mod_more h5_input input_change_type">
+    <input type="text" disableemoticoninput="true" id="u_password2" name="u_password2" maxlength="16" placeholder="请再次输入密码"></div>
+  <p class="hint_12_tit">验证码</p>
+  <div class="mod mod_more h5_input2">
+    <input type="text" id="u_code" name="u_code" maxlength="10" class="ui-input w110" value=""/><img src="{maccms:path}inc/common/code.php?a=userreg&s='Math.random()" title="看不清楚? 换一张！" style="padding: 7px 0 0 0;cursor:hand;width: 88px;height: 35px;margin: 0 10px 0 0;vertical-align: center;cursor: pointer;" onClick="src='{maccms:path}inc/common/code.php?a=userreg&s='+Math.random()"/>
+  </div>
+  <div class="mt_20"><a id="register" href="javascript:void(0);" onclick="javascript:document.forms[0].submit();" class="btn_common ok_btn">立即注册</a></div>
+  <div class="hint_14 hint_agreement">
+     <input type="checkbox" name="agreement" id="agreement" checked="checked" value='1'/>我已阅读并接受《<a href="#">使用协议</a>》</p>
+  </div>
+</section>
+</form>
+</div>
+
+	<script type="text/javascript">
+		$.formValidator.initConfig({
+			formID:"loginform_web",
+			debug:false,
+			submitOnce:false,
+			onSuccess:function(){
+				//alert('dddddddddddddd');
+				$("#loginform_web").qiresub({
+					curobj:$("#loginform_web #loginbt"),
+					txt:'资料提交中，请稍后...',
+					onsucc:function(result){
+						$.hidediv(result);
+					}
+				}).post({url:'/user-login-viluser'});
+				return false;
+			},
+			onError:function(msg,obj,errorlist){
+				$("#errorlist").empty();
+				$.map(errorlist,function(msg){
+					$("#errorlist").append("<li>" + msg + "</li>")
+				});
+				//alert(msg);
+			},
+			submitAfterAjaxPrompt : '有資料正在非同步验证，请稍等...'
+		});
+		$("#loginform_web #u_name").formValidator({
+			onShow:"请输入正确的的用戶名",
+			onFocus:"用户名至少4位",
+			onCorrect:"填写正确"
+		})
+		.inputValidator({
+			min:4,
+			onError:"你输入的用户名不正确，请重新输入"
+		});
+		$("#loginform_web #u_password").formValidator({
+			onShow:"请输入密码",
+			onFocus:"密码至少6位",
+			onCorrect:"填写正确"
+		})
+		.inputValidator({
+			min:6,
+			empty:{
+				leftEmpty:false,
+				rightEmpty:false,
+				emptyError:"密码两边不能有空格"
+			},
+			onError:"你输入的密码不正确，请重新输入"
+		});
+	</script>
+	{foot}
+</body>
+</html>

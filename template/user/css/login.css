@@ -1,0 +1,218 @@
+@charset "utf-8";
+/* reset */
+body, div, dl, dt, dd, ul, ol, li,h1, h2, h3, h4, h5, h6, pre, code,form, fieldset, legend, input, button,textarea, p, blockquote, th, td {margin: 0;padding: 0;}
+fieldset, img {border: 0;}
+:focus {outline: 0;}
+address, caption, cite, code, dfn,em, th, var, optgroup {font-style: normal;font-weight: normal;}
+h1, h2, h3, h4, h5, h6 {font-size: 100%;font-weight: normal;}
+abbr, acronym {border: 0;font-variant: normal;}
+strong{font-weight: 700;}
+input, button, textarea,
+select, optgroup, option {	font-family: inherit;	font-size: inherit;	font-style: inherit;	font-weight: inherit;}
+code, kbd, samp, tt {font-size: 100%;}
+input, button, textarea, select {*font-size: 100%;}
+body {line-height: 1.5;}
+ol, ul {list-style: none;}
+table {border-collapse: collapse;border-spacing: 0;}
+caption, th {text-align: left;}
+sup, sub {font-size: 100%;vertical-align: baseline;}
+:link, :visited , ins {text-decoration: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: '';content: none;}
+.fn-clear:after{	visibility:hidden;display:block;	font-size:0;content:" ";clear:both;	height:0;}
+body .fn-clear{	*zoom:1;	*clear: both;	}
+body .fn-hide {display:none;}
+.fn-left,.fn-right {display:inline;}
+.fn-left {float:left;}
+.fn-right {float:right;}
+i, cite, em, var, address, dfn {
+font-style: italic;
+}
+
+body{
+	color: #666;
+	font-size:12px;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #f5f5f5;
+}
+a{text-decoration: none; color: #333;}
+a.color{color: #f60;}
+a:hover { text-decoration: underline; color: #f60; }
+
+#sign-logo {width:300px; height:150px; margin:40px auto 30px auto; background-image:url(../images/logo.png); background-repeat:no-repeat;background-size:300px 150px;}
+@media screen and (max-width: 630px){
+#sign-logo {width:200px; height:100px; margin:40px auto 30px auto; background-image:url(../images/logo.png); background-repeat:no-repeat;background-size:200px 100px;}
+}
+
+/*登录页*/
+.login-wrapper .box {position: relative;border: #d7d7d7 solid 1px;border-left: none;border-right: none;background: white;}
+.login-wrapper .input-wrapper {overflow: hidden;margin: 0 16px;border-bottom: #dddddd solid 1px;}
+.login-wrapper .input-wrapper .icon.forName {width: 19px;height: 20px;background-position: 0 -21px;}
+.login-wrapper .input-wrapper .icon {float: left;margin: 10px 15px 0 0;background-repeat: no-repeat;background-image: url("../images/icon.png");-webkit-background-size: 23px auto;background-size: 23px auto;}
+.login-wrapper .input-wrapper .input-box {position: relative;overflow: hidden;}
+.login-wrapper .input-wrapper input {padding-right: 35px;}
+.login-wrapper .box input {display: block;border: none;padding: 12px 50px 12px 12px;width: 100%;font-size: .9275rem;background: white;outline: none;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+.login-wrapper .input-wrapper:last-of-type {border: none;}
+.login-wrapper .input-wrapper .icon.forPwd {width: 19px;height: 21px;background-position: 0 -41px;}
+.login-wrapper .input-wrapper .icon {float: left;margin: 10px 15px 0 0;background-repeat: no-repeat;background-image: url("../images/icon.png");-webkit-background-size: 23px auto;background-size: 23px auto;}
+.login-wrapper .box input {display: block;border: none;padding: 12px 50px 12px 12px;width: 100%;font-size: .9275rem;background: white;outline: none;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+.login-wrapper form .btn {margin: 20px 16px 15px;}
+.btn.btnRed {border-color: #8A9906;color: white;background: #b8cd00;}
+.btn {display: block;margin: 0 0 15px;border-style: solid;border-width: 1px;font-size: 1.0625rem;line-height: 43px;text-align: center;-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;}
+.login-wrapper .label {margin: 27px 0 0;font-size: .875rem;text-align: center;}
+.login-wrapper .footer {padding: 20px 0 20px;width: 100%;font-size: .875rem;text-align: center;}
+
+
+/*注册页*/
+.hint_12_tit {
+margin: 12px 12px -4px;
+font-size: 12px;
+color: #828282;
+}
+.h5_input, .h5_input2 {
+-webkit-appearance: none;
+-moz-appearance: none;
+position: relative;
+border: 1px solid #c8c8c8;
+border-left: 0;
+border-right: 0;
+outline: 0;
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
+}
+.mod_more {
+margin-top: 10px;
+font-size: 16px;
+color: #333;
+}
+.mod {
+background-color: #fff;
+-webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,.22);
+-ms-box-shadow: 0 1px 2px 0 rgba(0,0,0,.22);
+box-shadow: 0 1px 2px 0 rgba(0,0,0,.22);
+}
+.h5_input input {
+-webkit-appearance: none;
+-moz-appearance: none;
+vertical-align: top;
+font-size: 16px;
+height: 44px;
+width: 100%;
+border: 0;
+padding: 0 0 0 12px;
+outline: 0;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+.h5_input2 input {
+-webkit-appearance: none;
+-moz-appearance: none;
+vertical-align: top;
+font-size: 16px;
+height: 44px;
+width: 70%;
+border: 0;
+padding: 0 0 0 12px;
+outline: 0;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+.ok_btn {
+border-color: #8A9906;
+background-color: #b8cd00;
+}
+
+.btn_common {
+display: block;
+margin: 0 10px;
+border: 1px solid #8A9906;
+margin-top:20px;
+height: 43px;
+line-height: 43px;
+font-size: 17px;
+color: #fff;
+text-align: center;
+-ms-border-radius: 3px;
+border-radius: 3px;
+}
+
+.hint_agreement {
+position: relative;
+margin: 13px 12px 0;
+padding-left: 28px;
+}
+.hint_14 {
+line-height: 20px;
+margin-top: 10px;
+font-size: 14px;
+color: #828282;
+}
+.hint_14>span, .hint_12>span {
+color: #F48800;
+}
+.checkbox {
+position: absolute;
+left: 0;
+top: 1px;
+width: 16px;
+height: 16px;
+}
+.checkbox::before {
+border: #ccc solid 1px;
+width: 16px;
+height: 16px;
+background: #fff;
+}
+.checkbox::after, .checkbox::before {
+content: " ";
+position: absolute;
+left: 0;
+top: 0;
+}
+.checkbox::after {
+top: 1px;
+left: 6px;
+display: none;
+border: #32963c solid 1px;
+border-left: 0;
+border-top: 0;
+width: 5px;
+height: 11px;
+-webkit-transform: rotateZ(45deg);
+-moz-transform: rotateZ(45deg);
+-ms-transform: rotateZ(45deg);
+-o-transform: rotateZ(45deg);
+transform: rotateZ(45deg);
+}
+.hint_agreement p {
+line-height: 23px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

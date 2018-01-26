@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>下载记录 - 会员中心 -{maccms:name}</title>
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+<meta name="keywords" content="{maccms:keywords}"/>
+<meta name="description" content="{maccms:description}"/>
+<link href="{maccms:path}template/user/css/base.css" type="text/css" rel="stylesheet"/>
+<link href="{maccms:path}template/user/css/u.css" type="text/css" rel="stylesheet"/>
+<link href="{maccms:path}template/user/css/i.css?20120915" type="text/css" rel="stylesheet"/>
+<script>var SitePath='{maccms:path}',SiteAid='{maccms:siteaid}',SiteTid='{maccms:sitetid}',SiteId='{maccms:siteid}';</script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/common.js"></script>
+<script>
+$(function(){
+	$("#btnClear").click(function(){
+		if(confirm('确定要清空记录吗')){
+			$("#form1").attr("action","index.php?m=user-del-flag-downs-clear-1.html");
+			$("#form1").submit();
+		}
+		else{return false}
+	});
+	$("#btnDel").click(function(){
+		if(checkCount('d_id[]')==0){
+			alert("请至少选择一个资料");
+			return;
+		}
+		if(confirm('确定要删除吗')){
+			$("#form1").attr("action","index.php?m=user-del-flag-downs.html");
+			$("#form1").submit();
+		}
+		else{return false}
+	});
+});
+</script>
+</head>
+<body>
+{head}
+
+<div class="user_box">
+<ul>
+<form id="form1" name="form1" method="post">
+	     <!-- BEGIN row -->
+			<li><label style="width:50px;"><input name="d_id[]" type="checkbox" value="{d_id}" style="margin:10px 0 0 10px"></label><a target="_blank" href="{d_link}">{d_name}</a>/{t_name}</li>
+		<!-- END row -->
+		<!-- // i-intro End -->
+<a href="javascript:void(0);" onclick="javascript:document.forms[0].submit();" class="btn" id="btnDel">刪除记录</a>
+		</form>
+</ul>
+</div>
+
+
+{foot}
+</body>
+</html>

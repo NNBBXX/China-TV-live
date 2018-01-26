@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>支付宝在线购卡 - 会员中心 -{maccms:name}</title>
+<meta name="keywords" content="{maccms:keywords}"/>
+<meta name="description" content="{maccms:description}"/>
+<link href="{maccms:path}template/user/css/base.css" type="text/css" rel="stylesheet"/>
+<link href="{maccms:path}template/user/css/i.css?20120915" type="text/css" rel="stylesheet"/>
+<script>var SitePath='{maccms:path}',SiteAid='{maccms:siteaid}',SiteTid='{maccms:sitetid}',SiteId='{maccms:siteid}';</script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/common.js"></script>
+<script language="javascript">
+$(function(){
+	$("#form5").validate({
+		rules:{
+			OrdAmt:{
+				required:true,
+				number:true,
+				min:{pay_min}?>
+			}
+		}
+	});
+});
+</script>
+<style type="text/css">
+.shengji h4 { line-height:40px; font-weight:bold; font-size:28px; color:#666; font-family:\5fae\8f6f\96c5\9ed1; text-align:center;}
+.shengji li { line-height:50px; font-size:16px; color:#333;}
+.shengji li span {-khtml-border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px; border-radius:8px; line-height:40px; font-size:16px; color:#333; padding:8px; font-weight:bold;}
+.shengji dl { padding:0;}
+.shengji dl a {-khtml-border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px; border-radius:8px;background-color:#C60; display:block; font-size:20px; font-weight:bold; padding:15px; text-align:center; line-height:25px; color:#FFF; width:180px; margin-right:20px; float:left;}
+.shengji dl a p { margin:0;}
+.shengji dl a:hover {background-color:#930;}
+.shengji li.km {-khtml-border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px; border-radius:8px;background-color:#000;padding:10px; text-align:left; line-height:25px; color:#FFF; margin-bottom:15px; width:290px;}
+.shengji li em {background-color:#930; font-size:18px; font-weight:bold; color:#FFF; padding:8px; font-style:normal; font-family:\5fae\8f6f\96c5\9ed1; margin-right:15px; }
+</style>
+</head>
+<body>
+{head}
+<div id="content" class="layout">
+  <div class="ui-box ui-qire fn-clear" id="i-box">
+    <div id="i-bar">
+      <h3>会员控制台</h3>
+      <div id="user-nav">
+        <ul class="user-nav-list fn-clear">
+          <li ><a href="index.php?m=user-index.html"><span class="icon zl-icon">&nbsp;</span>我的资料</a></li>
+          <li><a href="index.php?m=user-fav.html"><span class="icon sc-icon">&nbsp;</span>我的收藏</a></li>
+          <!--<li><a href="#"><span class="icon dy-icon">&nbsp;</span>我的訂閱</a></li>-->
+          <li><a href="index.php?m=user-plays.html"><span class="icon pl-icon">&nbsp;</span>我的播放记录</a></li>
+          <li><a href="index.php?m=user-downs.html"><span class="icon bf-icon">&nbsp;</span>我的下载记录</a></li>
+          <li class="current"><a href="index.php?m=user-pay.html"><span class="icon dx-icon">&nbsp;</span>充值卡充值</a></li>
+          <li ><a href="index.php?m=user-upgrade.html"><span class="icon gz-icon">&nbsp;</span>升级会员組</a></li>
+          <!--<li><a href="#"><span class="icon fd-icon">&nbsp;</span>我的留言</li>--></a>
+          </li>
+        </ul>
+      </div>
+      <!-- 
+			<div class="user-visitors" id="user-visitors">
+				<h3>最近訪客</h3>
+				<ul class="visitor-list">
+				</ul>
+			</div>
+		     --> 
+    </div>
+    <!-- // i-bar end -->
+    <div class="i-box-cnt" id="i-cnt">
+      <div id="i-profile">
+        <div class="ui-title i-tab-nav-box">
+          <ul class="i-tab-nav fn-clear">
+            <li ><a href="index.php?m=user-pay.html">充值卡充值</a></li>
+            <li class="line"></li>
+            <li class="current"><a href="index.php?m=user-pay2.html">線上購卡</a></li>
+          </ul>
+        </div>
+        <div class="ui-form">
+<div class="shengji">
+    <ul>
+      <li>会员級別分为两种：</li>
+      <li><span style="background-color:#f4bb81;">VIP会员 - VIP会员可以观看全部禁片，但仅限于电脑观看禁片。</span></li>
+      <li><span style="background-color:#f4cf81;">高級VIP会员 - 高級VIP会员可以观看全部禁片，支援電腦、平板以及手機观看禁片。</span></li>
+      <dl style="margin-top:20px"><a href="" target="_blank">點擊購買250元充值卡</a><a href="" target="_blank">點擊購買150元充值卡</a><a href="" target="_blank">點擊購買100元充值卡</a><a href="" target="_blank">點擊購買30元充值卡</a><a href="" target="_blank">點擊購買10元充值卡</a></dl>
+      <li>購買成功後！請到"升级会员組"頁面進行升级！</li>
+      <div>
+      </div>
+      
+<br>
+<br>
+<br>
+
+    </ul>
+            </div>
+        </div>
+        <!-- // ui-form End --> 
+      </div>
+    </div>
+    <!-- // i-cnt End --> 
+  </div>
+  <!-- // maxBox End --> 
+</div>
+<!-- // wrap End --> 
+{foot}
+</body>
+</html>

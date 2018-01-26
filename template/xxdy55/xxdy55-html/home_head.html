@@ -1,0 +1,19 @@
+<header id='test' class="header clearfix">
+         <a href="javascript:void(0);" target="_self" class="aChannel top_channel_btn"><span>直播</span><i class="moreArrow"></i></a>  <a href="javascript:void(0);" target="_self" class="aHeaderSearch top_search_btn"><i class="globalIcon searchIcon"></i><em>搜索频道</em></a>
+    <a href="http://{maccms:url}" target="_self" class="aHeaderFun"><i class="globalIcon indexIcon"></i><span>首页</span></a>
+	<p class="headerChannelList">
+<a  target="_self" href="http://{maccms:url}">首页</a>
+{maccms:menu type=parent order=asc table=vod}<a {if-A:{maccms:curvodtypeid}=[menu:id]}class="current" {endif-A}href="[menu:link]" {if-A:[menu:id]=1}{endif-A}{if-A:[menu:id]=2}{endif-A}{if-A:[menu:id]=4}{endif-A}{if-A:[menu:id]=3}{endif-A}{if-A:[menu:id]=5}{endif-A}{if-A:[menu:id]=6}{endif-A} target="_self" >[menu:name]</a> {/maccms:menu}</p>
+<section class="searchPop popShow">
+<section class="searchCon">
+<form id="ffsearch" name="ffsearch" method="post" action="/index.php?s=vod-search"><span class="sSearchInput"><input autocomplete="off" autovalue="请输入频道名" class="searchInput" placeholder="请输入频道名" type="search" id="wd" name="wd"><i class="iDelete" style="display: none;"></i></span><input type="submit" id="searchbutton"  class="cancelInput" value="搜索" /></form></section>
+<p class="pLinks">
+ {maccms:vod num=10 by=hits type=all order=desc}
+ <a href="[vod:link]" target="_self" title="[vod:name]"><span class="sName">[vod:name]</span><span class="sStyle">直播</span></a>
+ {/maccms:vod}</p> 
+ </section>
+	</header>
+	<!-- 『tv』手机在线直播程序 -->
+<!-- 永久售后更新程序：shop108096921.taobao.com -->
+<!-- 官方网站 www.wxqhsc.cn 独家开发-->
+<!-- 请认准网销旗航商城频道永久更新-->

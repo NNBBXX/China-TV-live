@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+<title>催更/报错</title>
+<style>
+	h2,p{padding:0; margin:0;}
+	h2{font-size:14px;height:25px;color:#027DB9;line-height:25px;background:#B4E5FE;text-align:center;margin-bottom:10px;}
+	.err{width:100%;height:185px;background:#F5FBFE;border:1px solid #B0DCF5;margin: 0 auto}
+	.err p{margin-left:10px;} 
+</style>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<meta content="telephone=no" name="format-detection">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta content="{maccms:path}" name="apple-mobile-web-app-title">
+<link href="{maccms:path}favicon.ico" type="image/x-icon" rel="icon">
+<link href="{maccms:path}favicon.ico" type="image/x-icon" rel="shortcut icon">
+<link href="{maccms:path_tpl}style/global.css" rel="stylesheet" type="text/css">
+<link href="{maccms:path_tpl}style/search.css" rel="stylesheet" type="text/css">
+<link href="{maccms:path_tpl}style/index.css" rel="stylesheet" type="text/css">
+<link href="{maccms:path_tpl}style/tv.detail.css" rel="stylesheet" type="text/css">
+<script>var SitePath='{maccms:path}',SiteAid='{maccms:siteaid}',SiteTid='{maccms:sitetid}',SiteId='{maccms:siteid}';</script>
+<script charset="utf-8" src="{maccms:path_tpl}js/jquery-1.7.2.min.js"></script>
+<script charset="utf-8" src="{maccms:path_tpl}js/jquery.autocomplete-1.1.js"></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/home.js"></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/zepto.js"></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/iscroll.js"></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/index.min.js"></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/uaredirectformobile.js"></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/tpl.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/jq/jquery.validate.js"></script>
+<script language="javascript">
+function be(name){
+	var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+	var r = window.location.search.substr(1).match(reg);
+	if (r!=null) return decodeURI(r[2]); return null; 
+}
+$(document).ready(function(){
+	$("#form1").validate({
+		rules:{
+			g_name:{
+				required:true,
+				maxlength:64
+			},
+			g_content:{
+				required:true,
+				maxlength:255
+			}
+		}
+	});
+	var ref = document.referrer;
+	if(!ref) {
+		try {
+            if(window.opener){
+                ref = window.opener.location.href;
+            }
+        }
+        catch (e) {}
+	}
+	
+	var id = be("id");
+	var name = be("name");
+	if(id=="" || name==""){
+		alert("参数不正确");
+		setTimeout("window.close()",1000);
+	}
+	else{
+		$("#g_vid").val(id);
+		$("#g_content").val("[ID:"+id+"-名称:"+name+"]无法观看/有更新请检查修复。");
+	}
+});
+
+
+</script>
+</head>
+<body  style="font-size:12px;background-color:#D7EDFA;height:22px;line-height:22px;">
+	<form id="form1" name="form1" action="../inc/ajax.php?ac=reporterr" method="post">
+	<input type="hidden" name="g_vid" id="g_vid"  />
+	<div class="err">
+	<h2>提交要求，我们会在第一时间内修正</h2>
+	<p style="padding-bottom:5px;">&nbsp;报&nbsp;错&nbsp;者:&nbsp;<input type="text" id="g_name" name="g_name"  value="匿名"  size="15"><font color="#FF0000">*必填</font></p>
+	<p>错误提示:<textarea id="g_content"  name="g_content" style="width:260px;height:88px" rows=5 cols=30></textarea>
+	<font color="#FF0000">*必填</font></p>
+	<input type="submit" value="提交请求" style="margin:5px 0 0 130px;">
+	</div>
+	</form>
+</body>
+</html>

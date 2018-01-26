@@ -1,0 +1,2 @@
+﻿网站设置,?m=system-config
+频道管理,?m=vod-list

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{maccms:name} - 找回密码</title>
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+<link href="{maccms:path}template/user/css/login.css" type="text/css" rel="stylesheet"/>
+<meta name="keywords" content="{maccms:keywords}"/>
+<meta name="description" content="{maccms:description}"/>
+<link href="{maccms:path}template/user/css/base.css" type="text/css" rel="stylesheet"/>
+<link href="{maccms:path}template/user/css/qirebox.css" type="text/css" rel="stylesheet"/>
+<script>var SitePath='{maccms:path}',SiteAid='{maccms:siteaid}',SiteTid='{maccms:sitetid}',SiteId='{maccms:siteid}';</script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/common.js"></script>
+</head>
+<body>
+
+<div id="sign-logo"></div>
+
+<div class="login-wrapper">
+<form method="post" action="index.php?m=user-findpasssave.html">
+<section id="email" class="main hid" style="display: block;">
+  <input type="hidden" name="step" value="0">
+  <p class="hint_12_tit">用戶名</p>
+  <div class="mod mod_more h5_input">
+    <input id="u_name" name="u_name" type="text" placeholder="请输入你的用户名">
+  </div>
+  <p class="hint_12_tit">安全问题</p>
+  <div class="mod mod_more h5_input input_change_type">
+    <input id="u_question" name="u_question" type="text" placeholder="请输入你的问题"></div>
+  <p class="hint_12_tit">安全答案</p>
+  <div class="mod mod_more h5_input input_change_type">
+    <input id="u_answer" name="u_answer" type="text" placeholder="请输入你的答案"></div>
+  <p class="hint_12_tit">新密码</p>
+  <div class="mod mod_more h5_input">
+    <input id="u_password" name="u_password" type="password" placeholder="请输入你的新密码"></div>
+  <div class="mt_20"><a href="javascript:void(0);" onclick="javascript:document.forms[0].submit();" class="btn_common ok_btn">提交</a></div>
+</section>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<downs>
+	<down status="1" sort="89" from="http" show="网盘资源" des=""><tip><![CDATA[在线观看需安装相关app，影视均非本站上传！]]></tip></down>
+	<down status="1" sort="88" from="bt" show="外站连接" des="bt.com"><tip><![CDATA[点击下方链接会跳转出本站观看]]></tip></down>
+	<down status="1" sort="87" from="xunlei" show="迅雷下载" des="xunlei.com"><tip><![CDATA[请先安装手机迅雷，下载非常方便！]]></tip></down>
+	<down status="1" sort="86" from="kuaiche" show="磁力下载" des="kuaiche.com"><tip><![CDATA[需要安装磁力下载功能]]></tip></down>
+
+	<!--
+	<down status="1" sort="180" from="ftp" show="FTP下载" des=""><tip><![CDATA[无需安装任何插件]]></tip></down>
+	<down status="1" sort="90" from="xunlei" show="迅雷下载" des="xunlei.com"><tip><![CDATA[需要安装迅雷下载工具]]></tip></down>
+	<down status="1" sort="80" from="kuaiche" show="快车下载" des="kuaiche.com"><tip><![CDATA[需要安装快车下载功能]]></tip></down>
+
+	-->
+</downs>
